@@ -1,0 +1,23 @@
+{
+  "name": "announcebot",
+  "version": "0.1.0",
+  "description": " A simple drop-in program to handle announcements for a hosted bot. ",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hepteract/announcebot.git"
+  },
+  "author": "Septeract",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hepteract/announcebot/issues"
+  },
+  "homepage": "https://github.com/hepteract/announcebot#readme"
+}
