@@ -17,6 +17,12 @@ client.on('message', msg => {
     });
     msg.reply("Sent!")
   } else if (msg.content === ".announcehere") {
+    if (config.channels.includes(msg.channel.id)) {
+      return
+    } else if (! msg.author.permissions.hasPermission("administrator")) {
+      return
+    }
+	  
     config.channels.push(msg.channel.id);
     console.log(`${msg.channel.name} added to announcement channels`);
     fs.writeFile("./config.json", JSON.stringify(config), (err) => {
