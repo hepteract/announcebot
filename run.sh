@@ -1,3 +1,4 @@
 #!/bin/bash
 
-node .
+cd /home/ellie/announcebot
+node . | tee bot.log
