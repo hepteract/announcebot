@@ -19,7 +19,7 @@ client.on('message', msg => {
   } else if (msg.content === ".announcehere") {
     if (config.channels.includes(msg.channel.id)) {
       return
-    } else if (! msg.member.permissions.hasPermission("administrator")) {
+    } else if (! msg.member.permissions.has("ADMINISTRATOR")) {
       return
     }
 	  
