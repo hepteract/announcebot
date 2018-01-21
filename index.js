@@ -1,5 +1,6 @@
 const config = require("./config.json");
 
+const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -8,8 +9,15 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
+  if (msg.content.startsWith(".announce ") && msg.author.id === config.owner) {
+    let text = msg.content.substr(10);
+    msg.reply(text);
+    config.channels.forEach( (channel) => {
+      client.channels.get(channel).send(text);
+    });
+    msg.reply("Sent!")
+  } else if (msg.content === ".announcehere") {
+    config.channels.push(msg.channel.id);
   }
 });
 
