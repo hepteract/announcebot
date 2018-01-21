@@ -18,6 +18,7 @@ client.on('message', msg => {
     msg.reply("Sent!")
   } else if (msg.content === ".announcehere") {
     config.channels.push(msg.channel.id);
+    console.log(`${msg.channel.name} added to announcement channels`);
     fs.writeFile("./config.json", JSON.stringify(config), (err) => {
       if (err) {
 	return console.log(err);
